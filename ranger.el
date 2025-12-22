@@ -1,8 +1,8 @@
 ;;; ranger.el --- Make dired more like ranger -*- lexical-binding: t -*-
-;; Copyright (C) 2015-2017  Rich Alesi
+;; Copyright (C) 2015-2024  Rich Alesi
 
 ;; Author : Rich Alesi <https://github.com/ralesi>
-;; Version: 0.9.8.6
+;; Version: 0.9.9
 ;; Keywords: files, convenience, dired
 ;; Homepage: https://github.com/ralesi/ranger
 ;; Package-Requires: ((emacs "27.1"))
@@ -65,6 +65,7 @@
 ;; version 0.9.8,   2015-10-04 ranger is now a major mode
 ;; version 0.9.8.1, 2016-08-23 ranger-override-dired-mode
 ;; version 0.9.8.4, 2016-10-02 more mappings to match ranger
+;; version 0.9.9,   2024-12-22 modernization: Emacs 27.1+, advice-add, hydra support
 
 ;;; Code:
 

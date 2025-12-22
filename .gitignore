@@ -1,0 +1,12 @@
+# Compiled Emacs files
+*.elc
+
+# Package build artifacts
+*-autoloads.el
+*-pkg.el
+dist/
+
+# Temporary files
+*~
+\#*\#
+.\#*

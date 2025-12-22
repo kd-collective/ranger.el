@@ -68,8 +68,14 @@ selected files, in the primary dired buffer.
 
 ## Installation
 
-Once you have setup [Melpa](https://melpa.org/#/getting-started) you can use the
-`package-install` command, to install Ranger. The package name is `ranger`.
+Ranger requires **Emacs 27.1 or later**. Once you have setup
+[Melpa](https://melpa.org/#/getting-started) you can use the `package-install`
+command, to install Ranger. The package name is `ranger`.
+
+For optional hydra menu support, also install the `hydra` package:
+```el
+M-x package-install RET hydra RET
+```
 
 ### Screenshot
 
@@ -104,6 +110,7 @@ Ranger screencast
 * Minimal ranger mode (deer-mode)
 * Copy / paste functionality
 * Persistent flags showing recently copied items
+* Optional hydra integration for discoverable command menus
 
 ## Todo
 
@@ -435,6 +442,38 @@ one-window. This causes conflicts with ranger, but there is a workaround.
 
 Most parameters can be toggled on and off, and stay within the current Emacs
 session. Any settings that are desired on startup should be set below.
+
+### Optional Hydra Integration
+
+Ranger supports optional [hydra](https://github.com/abo-abo/hydra) menus for
+common command groups, providing a more discoverable interface. To enable hydra
+support, install the hydra package and set:
+
+```el
+(setq ranger-use-hydra t)
+```
+
+When enabled, three hydra menus are available:
+
+- **Navigation Menu (`ranger-hydra-go/body`)** - Quick access to common
+  directories, tabs, and navigation commands. Shows the same options as the
+  built-in "g" menu but with a persistent visual guide.
+
+- **Sort Menu (`ranger-hydra-sort/body`)** - Sort files by name, extension,
+  size, or modification time, in ascending or descending order. Provides the
+  same functionality as the "o" sort menu.
+
+- **Settings Menu (`ranger-hydra-settings/body`)** - Toggle various ranger
+  settings like hidden files, directory-first sorting, literal preview, image
+  scaling, and parent window count. Groups the various "z" prefix commands.
+
+You can call these hydra menus directly with `M-x ranger-hydra-go/body`,
+`M-x ranger-hydra-sort/body`, or `M-x ranger-hydra-settings/body`, or bind them
+to your preferred keys.
+
+**Note:** Hydra menus are completely optional. All ranger functionality works
+without hydra installed. The hydra integration is provided as a convenience for
+users who prefer a visual, discoverable interface.
 
 ### Buffer Management
 
